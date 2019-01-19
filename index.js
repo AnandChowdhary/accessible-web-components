@@ -1,2 +1,2 @@
-import CustomGreeting from "./components/custom-greeting";
-export const CustomGreeting;
+import FormGroup from "./components/form-group";
+export const FormGroup;
