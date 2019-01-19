@@ -8,16 +8,18 @@
         <style>
             body { max-width: 720px; margin: auto; font: menu; font-size: 100%; background-color: whitesmoke }
             section { background-color: #fff; padding: 2rem; margin-top: 2rem; box-shadow: 0 0.25rem 0.5rem rgba(52, 73, 94, 0.1); border-radius: 0.2rem }
-            pre { margin: 0 0 1rem 0 }
+            pre { margin: 0 0 1rem 0; background-color: #34495e; color: #ecf0f1; padding: 0.75rem; line-height: 1.5; border-radius: 0.2rem; }
+            ul { margin-bottom: 1.25rem; line-height: 1.7; }
             h1 { text-align: center; margin: 10vh 0 }
+            h2 { margin-top: -0.5rem }
         </style>
 
         <!-- Dependencies -->
-        <script src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.4/webcomponents-bundle.js"></script>
         
         <!-- Components -->
         <script type="module" src="./components/custom-greeting.js"></script>
+        <script type="module" src="./components/form-group.js"></script>
 
     </head>
 
@@ -28,21 +30,34 @@
             <h1>Accessible Web Components</h1>
 
             <section>
-                <pre><code>&lt;custom-greeting name="Anand"&gt;Hello world&lt;/custom-greeting&gt;</code></pre>
-                <custom-greeting name="Anand">Hello world</custom-greeting>
-            </section>
-
-            <section>
-                <pre><code>&lt;custom-greeting name="Anand"&gt;Hello world&lt;/custom-greeting&gt;</code></pre>
-                <custom-greeting name="Anand">Hello world</custom-greeting>
-            </section>
-
-            <section>
-                <pre><code>&lt;custom-greeting name="Anand"&gt;Hello world&lt;/custom-greeting&gt;</code></pre>
-                <custom-greeting name="Anand">Hello world</custom-greeting>
+                <h2>Form Group</h2>
+                <ul>
+                    <li>Autogenerates an ID for each form element (input, textarea, etc.)</li>
+                    <li>Adds label "for" to the label</li>
+                </ul>
+                <pre>&lt;form-group&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;label&gt;I agree with the terms.&lt;/label&gt;
+&lt;/form-group&gt;</pre>
+                <p>Renders to:</p>
+                <form-group>
+                    <input type="checkbox">
+                    <label>I agree with the terms.</label>
+                </form-group>
             </section>
 
         </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const customElements = document.querySelectorAll("section > p + *");
+                customElements.forEach(element => {
+                    const code = document.createElement("pre");
+                    code.innerHTML = element.outerHTML.replace(/  /g, "").replace(/</g, "&lt;").replace(/>/g, "&gt;").trim();
+                    element.parentElement.insertBefore(code, element);
+                });
+            })
+        </script>
 
     </body>
 
