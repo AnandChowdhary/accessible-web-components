@@ -1,2 +1,2 @@
-import FormGroup from "./components/form-group";
-export const FormGroup;
+import FormGroupElement from "./components/form-group";
+export const FormGroup = FormGroupElement;

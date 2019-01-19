@@ -37,3 +37,4 @@ class FormGroup extends LitElement {
 }
 
 customElements.define("form-group", FormGroup);
+export default FormGroup;
