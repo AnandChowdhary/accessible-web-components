@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from "lit-element";
 
 // Create your custom component
 class CustomGreeting extends LitElement {
@@ -11,12 +11,14 @@ class CustomGreeting extends LitElement {
   // Initialize properties
   constructor() {
     super();
-    this.name = 'World';
+    this.name = "World";
   }
   // Define a template
   render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+    return html`
+      <div>Hello, ${this.name}!</div>
+    `;
   }
 }
 // Register the element with the browser
-customElements.define('custom-greeting', CustomGreeting);
+customElements.define("custom-greeting", CustomGreeting);

@@ -1,7 +1,49 @@
 <!doctype html>
-<body>
-    <script src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-    <script type="module" src="./components/custom-greeting.js"></script>
-    <custom-greeting name="Anand">Hello world</custom-greeting>
-</body>
+<html>
+
+    <head>
+
+        <title>Accessible Web Components</title>
+
+        <style>
+            body { max-width: 720px; margin: auto; font: menu; font-size: 100%; background-color: whitesmoke }
+            section { background-color: #fff; padding: 2rem; margin-top: 2rem; box-shadow: 0 0.25rem 0.5rem rgba(52, 73, 94, 0.1); border-radius: 0.2rem }
+            pre { margin: 0 0 1rem 0 }
+            h1 { text-align: center; margin: 10vh 0 }
+        </style>
+
+        <!-- Dependencies -->
+        <script src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        
+        <!-- Components -->
+        <script type="module" src="./components/custom-greeting.js"></script>
+
+    </head>
+
+    <body>
+
+        <main>
+
+            <h1>Accessible Web Components</h1>
+
+            <section>
+                <pre><code>&lt;custom-greeting name="Anand"&gt;Hello world&lt;/custom-greeting&gt;</code></pre>
+                <custom-greeting name="Anand">Hello world</custom-greeting>
+            </section>
+
+            <section>
+                <pre><code>&lt;custom-greeting name="Anand"&gt;Hello world&lt;/custom-greeting&gt;</code></pre>
+                <custom-greeting name="Anand">Hello world</custom-greeting>
+            </section>
+
+            <section>
+                <pre><code>&lt;custom-greeting name="Anand"&gt;Hello world&lt;/custom-greeting&gt;</code></pre>
+                <custom-greeting name="Anand">Hello world</custom-greeting>
+            </section>
+
+        </main>
+
+    </body>
+
+</html>
