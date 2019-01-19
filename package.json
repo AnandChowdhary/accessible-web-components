@@ -1,0 +1,9 @@
+{
+  "name": "accessible-web-components",
+  "version": "0.0.0",
+  "description": "A set of extensible, accessible web components to make life easier for developers",
+  "main": "index.js",
+  "repository": "git@github.com:AnandChowdhary/accessible-web-components",
+  "author": "Anand Chowdhary <mail@anandchowdhary.com>",
+  "license": "MIT"
+}
